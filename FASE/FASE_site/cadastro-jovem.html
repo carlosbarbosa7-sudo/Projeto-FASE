@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta de jovem | FASE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="cadastro-jovem.js" defer></script>
+</head>
+<body class="auth-page">
+  <main class="auth-layout auth-layout-cadastro">
+    <section class="auth-brand-panel">
+      <a class="auth-brand" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a>
+      <div><span class="auth-mark" aria-hidden="true">✦</span><h2>Abra caminho<br>para o seu futuro.</h2><p>Crie seu perfil e guarde as oportunidades que combinam com você.</p></div>
+      <a class="auth-back" href="login.html">Já tem conta? Entrar</a>
+    </section>
+    <section class="auth-content">
+      <div class="cartao login-card auth-register-card">
+      <span class="etiqueta">Cadastro gratuito</span><h1>Crie sua conta de jovem</h1>
+      <p>Use a conta para montar seu perfil e salvar oportunidades.</p>
+      <form id="cadastro-jovem">
+        <label for="nome-jovem">Nome completo</label>
+        <input id="nome-jovem" name="nome" autocomplete="name" maxlength="160" required>
+        <label for="email-jovem">E-mail</label>
+        <input id="email-jovem" name="email" type="email" autocomplete="email" maxlength="254" required>
+        <label for="senha-jovem">Senha (mínimo 12 caracteres)</label>
+        <input id="senha-jovem" name="senha" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+        <label for="nascimento-jovem">Data de nascimento</label>
+        <input id="nascimento-jovem" name="dataNascimento" type="date" required>
+        <label for="telefone-jovem">Telefone <span class="texto-opcional">(opcional)</span></label>
+        <input id="telefone-jovem" name="telefone" type="tel" autocomplete="tel" maxlength="30">
+        <label for="escolaridade-jovem">Escolaridade <span class="texto-opcional">(opcional)</span></label>
+        <input id="escolaridade-jovem" name="escolaridade" maxlength="120">
+        <label for="cidade-jovem">Cidade <span class="texto-opcional">(opcional)</span></label>
+        <input id="cidade-jovem" name="cidade" autocomplete="address-level2" maxlength="120">
+        <label for="uf-jovem">Estado (UF) <span class="texto-opcional">(opcional)</span></label>
+        <input id="uf-jovem" name="uf" autocomplete="address-level1" minlength="2" maxlength="2">
+        <button class="botao largura" type="submit">Criar conta</button>
+        <p class="status-formulario" id="cadastro-jovem-status" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="aviso">É necessário ter pelo menos 16 anos. Pessoas acima de 24 anos também podem participar. Use dados fictícios neste ambiente de desenvolvimento.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

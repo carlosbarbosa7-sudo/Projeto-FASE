@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materiais educativos | FASE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="workspace-page">
+  <div class="workspace-layout">
+    <aside class="workspace-sidebar">
+      <a class="logo" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a>
+      <span class="sidebar-label">OPORTUNIDADES</span>
+      <nav aria-label="Navegação do site">
+        <a href="index.html">⌂ <span>Início</span></a>
+        <a href="vagas.html">▣ <span>Vagas</span></a>
+        <a href="cursos.html">◆ <span>Cursos</span></a>
+        <a class="ativo" href="materiais.html">▤ <span>Materiais</span></a>
+        <a href="sobre.html">ⓘ <span>Sobre o FASE</span></a>
+      </nav>
+      <a class="sidebar-logout" href="login.html">↪ <span>Entrar</span></a>
+    </aside>
+    <div class="workspace-main">
+      <header class="workspace-topbar">
+        <span>Conteúdos / Materiais educativos</span>
+        <a class="topbar-login" href="login.html">LOGIN</a>
+      </header>
+      <main class="pagina workspace-content">
+        <section class="titulo-pagina">
+          <div class="icone" aria-hidden="true">▤</div>
+          <div><span class="etiqueta">Conteúdos para aprender</span><h1>Materiais educativos</h1><p>Guias, documentos e recursos para ajudar você a se preparar.</p></div>
+        </section>
+        <section class="painel-filtros" aria-label="Filtros de materiais">
+          <label for="busca-materiais">Buscar material</label>
+          <input id="busca-materiais" type="search" placeholder="Buscar por tema ou palavra-chave">
+          <div class="grade dois">
+            <div><label for="categoria-materiais">Categoria</label><select id="categoria-materiais"><option>Categoria: todas</option><option>Carreira</option><option>Educação</option><option>Direitos</option></select></div>
+            <div><label for="tipo-materiais">Tipo de material</label><select id="tipo-materiais"><option>Tipo: todos</option><option>PDF</option><option>Link externo</option></select></div>
+          </div>
+          <button class="botao" type="button">Buscar</button>
+        </section>
+        <section class="lista" aria-label="Materiais disponíveis">
+          <article class="cartao item"><div><span class="tag">PDF · Carreira</span><h2>Guia: Como fazer um bom currículo</h2><p>Documento com dicas práticas para montar seu currículo.</p></div><a class="botao" href="#" onclick="alert('Adicione o arquivo PDF na pasta materiais e atualize este link.'); return false;">Baixar</a></article>
+          <article class="cartao item"><div><span class="tag">PDF · Direitos</span><h2>Direitos do Jovem Trabalhador</h2><p>Cartilha informativa sobre seus direitos.</p></div><a class="botao" href="#" onclick="alert('Adicione o arquivo PDF na pasta materiais e atualize este link.'); return false;">Baixar</a></article>
+          <article class="cartao item"><div><span class="tag">Link externo · Empreendedorismo</span><h2>Curso online: Empreendedorismo</h2><p>Link para conteúdo gratuito em plataforma externa.</p></div><a class="botao" href="https://www.gov.br/" target="_blank" rel="noopener">Acessar</a></article>
+        </section>
+        <p class="aviso">Para disponibilizar PDFs, crie uma pasta chamada materiais e coloque os arquivos nela.</p>
+      </main>
+      <footer>© 2026 FASE · Mais oportunidades. Mais futuro.</footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar | FASE</title><link rel="stylesheet" href="style.css"><script src="login.js" defer></script></head><body class="auth-page">
+<main class="auth-layout">
+  <section class="auth-brand-panel">
+    <a class="auth-brand" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a>
+    <div><span class="auth-mark" aria-hidden="true">✦</span><h2>Seu futuro<br>começa aqui.</h2><p>Oportunidades para aprender, crescer e se conectar ao mercado de trabalho.</p></div>
+    <a class="auth-back" href="index.html">← Voltar ao site</a>
+  </section>
+  <section class="auth-content">
+    <div class="cartao login-card">
+      <span class="etiqueta">Bem-vindo de volta</span><h1>Entre na sua conta</h1>
+      <p>Acesse como jovem, instituição aprovada ou administrador.</p>
+      <form id="admin-login">
+        <label for="usuario">E-mail ou usuário administrador</label><input id="usuario" name="usuario" type="text" autocomplete="username" required>
+        <label for="senha">Senha</label><input id="senha" name="senha" type="password" autocomplete="current-password" required>
+        <button class="botao largura" type="submit">Entrar</button>
+        <p class="status-formulario" id="login-status" role="status" aria-live="polite" hidden></p>
+      </form>
+      <div class="auth-links"><p>Não tem uma conta? <a class="link" href="cadastro-jovem.html">Criar conta de jovem</a></p>
+        <p>É uma organização? <a class="link" href="cadastro.html">Solicitar cadastro</a></p></div>
+      <p class="aviso">O acesso institucional é liberado pelo administrador após a aprovação da solicitação.</p>
+    </div>
+  </section>
+</main>
+</body></html>

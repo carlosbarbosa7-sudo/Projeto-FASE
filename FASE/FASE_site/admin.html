@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel administrativo | FASE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="workspace-page">
+  <div class="workspace-layout">
+    <aside class="workspace-sidebar">
+      <a class="logo" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a>
+      <span class="sidebar-label">ADMINISTRAÇÃO</span>
+      <nav aria-label="Navegação administrativa">
+        <a class="ativo" href="admin.html">▦ <span>Painel</span></a>
+        <a href="#instituicoes-titulo">♙ <span>Instituições</span></a>
+        <a href="#oportunidades-titulo">▣ <span>Oportunidades</span></a>
+        <a href="index.html">⌂ <span>Ver site</span></a>
+      </nav>
+      <button class="sidebar-logout" id="admin-logout" type="button">↪ <span>Sair</span></button>
+    </aside>
+    <div class="workspace-main">
+      <header class="workspace-topbar"><span>Gestão da plataforma</span><span class="avatar" aria-hidden="true">A</span></header>
+  <main class="pagina workspace-content">
+    <header class="titulo-pagina">
+      <div><span class="etiqueta">Gestão da plataforma</span><h1>Painel administrativo</h1>
+        <p>Analise solicitações de instituições e revise oportunidades antes da publicação.</p></div>
+    </header>
+    <p class="status-formulario" id="admin-status" role="status" aria-live="polite" hidden></p>
+    <section class="secao-admin" aria-labelledby="instituicoes-titulo">
+      <div class="cabecalho-secao"><div><span class="etiqueta">Acesso à plataforma</span><h2 id="instituicoes-titulo">Instituições pendentes</h2></div>
+        <button class="botao botao-secundario" id="atualizar-instituicoes" type="button">Atualizar</button></div>
+      <p class="resultado-contagem" id="contagem-instituicoes" aria-live="polite"></p>
+      <div class="lista" id="lista-instituicoes"></div>
+    </section>
+    <section class="secao-admin" aria-labelledby="oportunidades-titulo">
+      <div class="cabecalho-secao"><div><span class="etiqueta">Publicações</span><h2 id="oportunidades-titulo">Oportunidades para revisão</h2></div>
+        <button class="botao botao-secundario" id="atualizar-oportunidades" type="button">Atualizar</button></div>
+      <p class="resultado-contagem" id="contagem-oportunidades" aria-live="polite"></p>
+      <div class="lista" id="lista-oportunidades"></div>
+    </section>
+      </main>
+      <footer>© 2026 FASE · Área administrativa</footer>
+    </div>
+  </div>
+</body>
+</html>

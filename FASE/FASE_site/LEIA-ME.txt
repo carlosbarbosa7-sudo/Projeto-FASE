@@ -1,0 +1,42 @@
+FASE - protótipo estático em HTML5 e CSS3
+
+COMO ABRIR O PROTÓTIPO CONECTADO À API
+1. Extraia o arquivo ZIP.
+2. Inicie a API em outro terminal: abra a pasta FASE/api no VS Code e execute .\run-api.ps1.
+3. Inicie o site em um terminal: abra a pasta FASE_site e execute .\run-site.ps1.
+4. Abra http://127.0.0.1:5500 no navegador e navegue pelo menu.
+5. Mantenha os dois terminais abertos enquanto usa o protótipo.
+
+ARQUIVOS
+- index.html: página inicial
+- vagas.html: oportunidades de emprego
+- cursos.html: cursos
+- materiais.html: materiais educativos
+- sobre.html: apresentação do projeto
+- login.html: login de jovem, instituição ou administrador
+- cadastro-jovem.html: criação de conta para jovens
+- conta.html: perfil, oportunidades salvas e alteração de senha
+- admin.html: painel para revisar cadastros de instituições e oportunidades
+- login.js, cadastro-jovem.js, conta.js e admin.js: autenticação e ações das contas
+- cadastro.html: formulário de solicitação de cadastro enviado à API e salvo como pendente
+- style.css: estilos compartilhados por todas as páginas
+- app.js: consulta a API, aplica busca e filtros e mostra os detalhes
+- run-site.ps1: inicia o servidor local do protótipo
+
+COMO A NAVEGAÇÃO FUNCIONA
+Os links usam <a href="vagas.html">Vagas</a>. Como os arquivos estão na mesma pasta,
+o navegador abre a página indicada. Para voltar, use o link Início ou o menu.
+A página inicial e as áreas de oportunidades, materiais, apresentação do projeto,
+conta, administração e cadastro institucional usam navegação lateral azul, adaptada
+para celulares com menu horizontal. Login e cadastro de jovens mantêm painéis de
+apresentação próprios para autenticação.
+
+IMPORTANTE
+As páginas de vagas e cursos carregam os registros publicados pela API Spring Boot,
+que consulta o banco MySQL fase_db. O servidor do site abre as páginas em HTTP local,
+necessário para a comunicação com a API. A inscrição e a candidatura continuam nos
+links externos das instituições. O cadastro de organização é salvo pela API com status pendente. Após aprová-la,
+o administrador entrega à instituição o e-mail de acesso e a senha provisória
+gerada pelo painel. Jovens podem criar conta, atualizar a senha e salvar
+oportunidades. A gestão de oportunidades pelas próprias instituições ainda será
+implementada.

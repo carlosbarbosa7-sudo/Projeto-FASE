@@ -1,0 +1,15 @@
+.tools/
+**/target/
+**/.tools/
+.vscode/
+.github/
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.bak
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vagas | FASE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="workspace-page">
+  <div class="workspace-layout">
+    <aside class="workspace-sidebar">
+      <a class="logo" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a><span class="sidebar-label">OPORTUNIDADES</span>
+      <nav aria-label="Navegação do site">
+        <a href="index.html">⌂ <span>Início</span></a><a class="ativo" href="vagas.html">▣ <span>Vagas</span></a>
+        <a href="cursos.html">◆ <span>Cursos</span></a><a href="materiais.html">▤ <span>Materiais</span></a>
+        <a href="sobre.html">ⓘ <span>Sobre o FASE</span></a>
+      </nav>
+      <a class="sidebar-logout" href="login.html">↪ <span>Entrar</span></a>
+    </aside>
+    <div class="workspace-main">
+      <header class="workspace-topbar"><span>Oportunidades / Vagas</span><a class="topbar-login" href="login.html">LOGIN</a></header>
+  <main class="pagina workspace-content">
+    <section class="titulo-pagina"><div class="icone" aria-hidden="true">▣</div><div><span class="etiqueta">Oportunidades</span><h1>Vagas</h1><p>Pesquise empregos, estágios e oportunidades de jovem aprendiz.</p></div></section>
+    <form class="painel-filtros" id="filtros-vagas">
+      <label for="busca-vagas">Buscar por cargo, empresa ou palavra-chave</label>
+      <input id="busca-vagas" name="q" type="search" placeholder="Ex.: atendimento, estágio, aprendiz">
+      <div class="grade tres">
+        <div><label for="categoria-vagas">Categoria</label><select id="categoria-vagas" name="categoria"><option value="">Todas as categorias</option></select></div>
+        <div><label for="local-vagas">Localização</label><select id="local-vagas" name="local"><option value="">Todas as localidades</option></select></div>
+        <div><label for="modalidade-vagas">Modalidade</label><select id="modalidade-vagas" name="modalidade"><option value="">Todas as modalidades</option></select></div>
+      </div>
+      <button class="botao" type="submit">Buscar vagas</button>
+      <button class="botao botao-secundario" type="reset">Limpar filtros</button>
+    </form>
+    <p class="resultado-contagem" id="contagem-vagas" aria-live="polite"></p>
+    <p class="sem-resultados" id="estado-api-vagas" aria-live="polite" hidden></p>
+    <section class="lista" id="lista-vagas" aria-label="Lista de vagas"></section>
+    <p class="sem-resultados" id="sem-resultados-vagas" hidden>Nenhuma vaga corresponde a esses filtros. Tente outros termos.</p>
+    <p class="aviso">A candidatura acontece no canal oficial da instituição responsável. Confira requisitos, valores e prazos no link de cada oportunidade.</p>
+  </main>
+  <dialog class="detalhes-dialog" id="detalhes-dialog" aria-labelledby="detalhes-titulo">
+    <button class="fechar-dialog" type="button" data-fechar-dialog aria-label="Fechar detalhes">×</button>
+    <span class="etiqueta">Detalhes da oportunidade</span><h2 id="detalhes-titulo"></h2>
+    <p class="tag" id="detalhes-meta"></p><p id="detalhes-descricao"></p>
+    <p><strong>Instituição:</strong> <span id="detalhes-instituicao"></span></p>
+    <p><strong>Requisitos:</strong> <span id="detalhes-requisitos"></span></p>
+    <p class="aviso">A candidatura acontece no canal oficial da instituição responsável. Confira requisitos, valores e prazos no link de cada oportunidade.</p>
+    <a class="botao" id="detalhes-link" target="_blank" rel="noopener">Acessar canal oficial</a>
+  </dialog>
+      <footer>© 2026 FASE · Mais oportunidades. Mais futuro.</footer>
+    </div>
+  </div>
+</body>
+</html>

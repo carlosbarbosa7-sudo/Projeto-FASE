@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de empresa ou instituição | FASE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="workspace-page">
+  <div class="workspace-layout">
+    <aside class="workspace-sidebar">
+      <a class="logo" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a><span class="sidebar-label">PARA ORGANIZAÇÕES</span>
+      <nav aria-label="Navegação do site">
+        <a href="index.html">⌂ <span>Início</span></a><a href="vagas.html">▣ <span>Vagas</span></a>
+        <a href="cursos.html">◆ <span>Cursos</span></a><a href="materiais.html">▤ <span>Materiais</span></a>
+        <a class="ativo" href="#form-cadastro-empresa">♙ <span>Cadastro</span></a>
+      </nav>
+      <a class="sidebar-logout" href="login.html">↪ <span>Entrar</span></a>
+    </aside>
+    <div class="workspace-main">
+      <header class="workspace-topbar"><span>Área de organizações / Solicitar cadastro</span><a class="topbar-login" href="login.html">LOGIN</a></header>
+  <main class="pagina cadastro-area workspace-content">
+    <section class="cartao cadastro-card">
+      <span class="etiqueta">Área de empresas e instituições</span>
+      <h1>Solicitar cadastro</h1>
+      <p>Informe os dados da organização e da pessoa responsável. Se aprovada, a instituição receberá uma conta com senha provisória para acessar o sistema.</p>
+      <form id="form-cadastro-empresa">
+        <label for="tipo-organizacao">Tipo de organização</label>
+        <select id="tipo-organizacao" name="tipo" required>
+          <option value="">Selecione</option><option value="EMPRESA">Empresa</option><option value="ENSINO">Instituição de ensino</option><option value="ORGAO_PUBLICO">Órgão público</option><option value="ORGANIZACAO_SOCIAL">Organização social</option><option value="OUTRA">Outra instituição</option>
+        </select>
+        <label for="nome-organizacao">Nome da empresa ou instituição</label>
+        <input id="nome-organizacao" name="organizacao" type="text" autocomplete="organization" placeholder="Nome oficial" required>
+        <label for="cnpj-organizacao">CNPJ</label>
+        <input id="cnpj-organizacao" name="cnpj" type="text" inputmode="text" autocomplete="off" placeholder="00.000.000/0000-00 ou formato alfanumérico" required>
+        <label for="responsavel">Pessoa responsável pelo cadastro</label>
+        <input id="responsavel" name="responsavel" type="text" autocomplete="name" placeholder="Nome completo" required>
+        <label for="email-organizacao">E-mail profissional</label>
+        <input id="email-organizacao" name="email" type="email" autocomplete="email" placeholder="nome@organizacao.com.br" required>
+        <label for="telefone-organizacao">Telefone de contato</label>
+        <input id="telefone-organizacao" name="telefone" type="tel" autocomplete="tel" placeholder="(92) 00000-0000" required>
+        <label for="site-organizacao">Site institucional <span class="texto-opcional">(opcional)</span></label>
+        <input id="site-organizacao" name="site" type="url" autocomplete="url" placeholder="https://www.organizacao.com.br">
+        <label for="atuacao-organizacao">O que pretende divulgar?</label>
+        <select id="atuacao-organizacao" name="atuacao" required>
+          <option value="">Selecione</option><option value="Vagas de emprego">Vagas de emprego</option><option value="Estágios e aprendizagem">Estágios e aprendizagem</option><option value="Cursos e capacitações">Cursos e capacitações</option><option value="Mais de um tipo de oportunidade">Mais de um tipo de oportunidade</option>
+        </select>
+        <label for="cidade-organizacao">Cidade e estado</label>
+        <input id="cidade-organizacao" name="cidade" type="text" autocomplete="address-level2" placeholder="Manaus - AM" required>
+        <label class="consentimento"><input type="checkbox" name="confirmacao" required> Confirmo que posso representar esta organização e que os dados informados são verdadeiros.</label>
+        <button class="botao largura" type="submit">Enviar solicitação</button>
+        <p class="status-formulario" id="status-cadastro" role="status" aria-live="polite" hidden></p>
+      </form>
+      <p class="aviso">Ambiente local de desenvolvimento: a solicitação será salva no banco e ficará pendente para análise. Use dados fictícios; ainda não informe dados reais.</p>
+    </section>
+    <aside class="cartao nota">
+      <div class="icone" aria-hidden="true">▣</div><h2>O que acontece depois?</h2>
+      <p>A equipe FASE confere as informações da organização. O acesso para publicar só deve ser liberado após aprovação administrativa.</p>
+      <p>Se aprovada, a organização recebe acesso por e-mail e uma senha provisória criada pelo administrador. No protótipo local, a entrega dessas credenciais é manual.</p>
+      <a class="link" href="login.html">Já tem acesso? Entrar</a>
+    </aside>
+      </main>
+      <footer>© 2026 FASE · Mais oportunidades. Mais futuro.</footer>
+    </div>
+  </div>
+</body>
+</html>

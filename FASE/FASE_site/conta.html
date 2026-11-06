@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha conta | FASE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="conta.js" defer></script>
+</head>
+<body class="workspace-page">
+  <div class="workspace-layout">
+    <aside class="workspace-sidebar">
+      <a class="logo" href="index.html" aria-label="FASE - Início"><img src="assets/logo-fase.png" alt="FASE"></a>
+      <span class="sidebar-label">MENU</span>
+      <nav aria-label="Navegação da conta">
+        <a href="index.html">⌂ <span>Início</span></a>
+        <a href="vagas.html">▣ <span>Vagas</span></a>
+        <a href="cursos.html">◆ <span>Cursos</span></a>
+        <a class="ativo" href="conta.html">● <span>Meu perfil</span></a>
+        <a id="nav-salvos" href="#area-salvos" hidden>☆ <span>Salvos</span></a>
+      </nav>
+      <button class="sidebar-logout" id="sair-conta" type="button">↪ <span>Sair</span></button>
+    </aside>
+    <div class="workspace-main">
+      <header class="workspace-topbar"><span>Área do usuário</span><span class="avatar" aria-hidden="true">F</span></header>
+      <main class="pagina workspace-content">
+    <header class="titulo-pagina"><div><span class="etiqueta">Área da conta</span><h1>Meu perfil</h1><p id="conta-boas-vindas">Carregando seu perfil...</p></div></header>
+    <p class="status-formulario" id="conta-status" role="status" aria-live="polite" hidden></p>
+    <section class="cartao" aria-labelledby="perfil-titulo">
+      <h2 id="perfil-titulo">Meu perfil</h2>
+      <div id="dados-perfil"></div>
+    </section>
+    <section class="secao-admin" id="area-salvos" aria-labelledby="salvos-titulo" hidden>
+      <div class="cabecalho-secao"><div><span class="etiqueta">Para consultar depois</span><h2 id="salvos-titulo">Oportunidades salvas</h2></div></div>
+      <div class="lista" id="lista-salvos"></div>
+    </section>
+    <section class="cartao secao-admin" aria-labelledby="senha-titulo">
+      <h2 id="senha-titulo">Alterar senha</h2>
+      <form id="form-alterar-senha">
+        <label for="senha-atual">Senha atual</label>
+        <input id="senha-atual" name="senhaAtual" type="password" autocomplete="current-password" required>
+        <label for="senha-nova">Nova senha (mínimo 12 caracteres)</label>
+        <input id="senha-nova" name="novaSenha" type="password" autocomplete="new-password" minlength="12" maxlength="128" required>
+        <button class="botao" type="submit">Atualizar senha</button>
+      </form>
+    </section>
+      </main>
+      <footer>© 2026 FASE · Área da conta</footer>
+    </div>
+  </div>
+</body>
+</html>
