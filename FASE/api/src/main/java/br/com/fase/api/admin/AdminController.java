@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api/admin")
@@ -56,6 +58,18 @@ public class AdminController {
         return service.organizacoesPendentes();
     }
 
+    @GetMapping("/organizacoes")
+    public List<OrganizacaoAdminResponse> organizacoesPorStatus(
+            @RequestHeader(name = "Authorization", required = false) String authorization,
+            @RequestParam String status) {
+        sessions.requireRole(authorization, "ADMIN");
+        String statusNormalizado = status.trim().toUpperCase();
+        if (!List.of("PENDENTE", "APROVADA", "RECUSADA").contains(statusNormalizado)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Status de instituicao invalido.");
+        }
+        return service.organizacoesPorStatus(statusNormalizado);
+    }
+
     @PatchMapping("/organizacoes/{id}/status")
     public OrganizacaoAdminResponse revisarOrganizacao(
             @RequestHeader(name = "Authorization", required = false) String authorization,
@@ -89,3 +103,4 @@ public class AdminController {
         return service.revisarOportunidade(id, request.status());
     }
 }
+

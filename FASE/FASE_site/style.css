@@ -57,7 +57,8 @@ footer { padding: 22px; text-align: center; color: var(--cinza); font-size: 13px
 input, select { width: 100%; padding: 12px 13px; border: 1px solid #cbdde5; border-radius: 8px; background: white; color: var(--texto); font: inherit; margin: 5px 0 12px; }
 .painel-filtros .grade { gap: 12px; }
 .painel-filtros .botao { margin-top: 2px; }
-.lista { display: grid; gap: 14px; }
+.lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); align-items: stretch; gap: 20px; }
+.lista > .cartao { height: 100%; }
 .item { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .item h2, .curso h2 { color: var(--azul); font-size: 19px; margin: 9px 0 4px; }
 .item p { margin-bottom: 0; }
@@ -164,7 +165,8 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
 .topbar-login { display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; border-radius: 8px; color: white; background: var(--azul-destaque); font-size: 12px; font-weight: 800; letter-spacing: .5px; text-decoration: none; }
 .topbar-login:hover { color: white; background: #10558f; }
 .topbar-login:focus-visible { outline: 3px solid #8fc8f5; outline-offset: 3px; }
-.workspace-content { max-width: 1240px; padding: 34px clamp(20px, 4vw, 52px); }
+.workspace-content { max-width: none; padding: 34px clamp(20px, 4vw, 52px); }
+.grade-oportunidades { grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); align-items: stretch; gap: 20px; }
 .workspace-main footer { border-top: 0; }
 .workspace-content .titulo-pagina { margin-bottom: 24px; }
 .workspace-content .cartao { box-shadow: 0 8px 26px rgba(8, 57, 79, .06); }
@@ -172,6 +174,9 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
 .workspace-content .curso,
 .workspace-content .item { border-radius: 12px; }
 .workspace-content .item { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
+.grade-oportunidades .item,
+.grade-oportunidades .curso { height: 100%; min-height: 270px; }
+.grade-oportunidades .item > div:first-child { flex: 1; }
 .workspace-content .item h2 { margin-top: 12px; }
 .acoes-oportunidade { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .acoes-oportunidade .botao { margin: 0; }
@@ -180,6 +185,42 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
 .workspace-content #form-alterar-senha { max-width: 560px; }
 .workspace-content .secao-admin { margin: 26px 0; }
 .workspace-content .painel-filtros { box-shadow: 0 8px 26px rgba(8, 57, 79, .05); }
+.dashboard-admin { padding: 24px; border: 1px solid var(--borda); border-radius: 16px; background: linear-gradient(145deg, #f9fcff, #edf5fa); }
+.dashboard-admin .cabecalho-secao { align-items: center; }
+.dashboard-admin .cabecalho-secao h2 { margin: 4px 0 0; color: var(--azul-escuro); }
+.dashboard-atualizacao { margin: -10px 0 16px; color: var(--cinza); font-size: 12px; }
+.indicadores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 14px; }
+.indicador-card { min-height: 130px; display: flex; flex-direction: column; gap: 6px; padding: 18px; }
+.indicador-label { color: var(--cinza); font-size: 12px; font-weight: 700; }
+.indicador-valor { color: var(--azul-escuro); font-size: 34px; line-height: 1.1; }
+.indicador-nota { color: #8296a1; font-size: 11px; }
+.graficos-grid { display: grid; grid-template-columns: minmax(280px, .85fr) minmax(320px, 1.15fr); gap: 16px; margin-top: 16px; }
+.grafico-card { min-width: 0; padding: 22px; }
+.grafico-card h3 { margin-bottom: 3px; color: var(--azul-escuro); font-size: 16px; }
+.grafico-legenda-intro { color: var(--cinza); font-size: 12px; }
+.grafico-donut-layout { min-height: 190px; display: flex; align-items: center; justify-content: center; gap: 26px; }
+.grafico-donut { position: relative; flex: 0 0 160px; width: 160px; height: 160px; border-radius: 50%; }
+.grafico-donut::after { position: absolute; inset: 27px; border-radius: 50%; background: white; content: ""; }
+.grafico-legenda { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.grafico-legenda li { display: grid; grid-template-columns: 12px auto auto; align-items: center; gap: 8px; color: var(--cinza); font-size: 13px; }
+.grafico-legenda strong { color: var(--azul-escuro); }
+.legenda-marcador { width: 10px; height: 10px; border-radius: 50%; }
+.grafico-barras { display: grid; gap: 14px; }
+.barra-cabecalho { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 5px; color: var(--texto); font-size: 12px; }
+.barra-cabecalho strong { color: var(--azul-escuro); }
+.barra-trilho { height: 9px; overflow: hidden; border-radius: 10px; background: #e7eff3; }
+.barra-preenchimento { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #1769aa, #36a9c2); }
+.grafico-vazio { margin: 20px 0; color: var(--cinza); font-size: 13px; }
+.abas-instituicoes { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 18px; border-bottom: 1px solid var(--borda); }
+.aba-instituicao { margin-bottom: -1px; padding: 10px 16px; border: 0; border-bottom: 3px solid transparent; color: var(--cinza); background: transparent; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.aba-instituicao:hover, .aba-instituicao.ativa { border-bottom-color: var(--azul-destaque); color: var(--azul-escuro); }
+.aba-instituicao:focus-visible { outline: 3px solid #1769aa; outline-offset: 2px; }
+.status-instituicao { margin-bottom: 6px; }
+.status-aprovada { color: #146c48; background: #e4f5ec; }
+.status-recusada { color: #8d3636; background: #faeaea; }
+.status-pendente { color: #8a5a13; background: #fff2d9; }
+.instituicao-data { margin-bottom: 6px; color: var(--cinza); font-size: 12px; }
+.instituicao-motivo { padding: 10px; border-radius: 8px; color: #784141; background: #fff5f5; font-size: 13px; }
 .home-dashboard { max-width: 1360px; }
 .dashboard-welcome { min-height: 290px; display: flex; align-items: center; margin-bottom: 32px; padding: clamp(24px, 4vw, 48px); border-radius: 16px; color: white; background: linear-gradient(115deg, #063b5a, #0879a8); }
 .dashboard-welcome .hero-conteudo { width: 100%; max-width: 700px; }
@@ -212,10 +253,13 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
   .dashboard-shortcuts { grid-template-columns: 1fr; }
   .dashboard-shortcuts .cartao { min-height: 0; }
   .dashboard-bottom { grid-template-columns: 1fr; }
+  .graficos-grid { grid-template-columns: 1fr; }
+  .dashboard-admin { padding: 18px; }
   .acoes-oportunidade { align-items: flex-start; }
-  .acoes-oportunidade .link-oficial { max-width: none;     .dashboard-welcome { min-height: 0; }
-    .dashboard-welcome h1 { font-size: 34px; }
-    .dashboard-section .cabecalho-secao { align-items: flex-start; flex-direction: column; }
+  .acoes-oportunidade .link-oficial { max-width: none; }
+  .dashboard-welcome { min-height: 0; }
+  .dashboard-welcome h1 { font-size: 34px; }
+  .dashboard-section .cabecalho-secao { align-items: flex-start; flex-direction: column; }
   }
 }
 
@@ -236,3 +280,4 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
   .auth-layout-cadastro { grid-template-columns: 1fr; }
   .auth-layout-cadastro .auth-brand-panel { min-height: 210px; }
 }
+

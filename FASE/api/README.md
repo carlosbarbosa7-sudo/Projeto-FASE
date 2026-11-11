@@ -49,6 +49,7 @@ Os filtros podem ser combinados. O código CORS permite, por padrão, o protóti
 - `GET /api/me/oportunidades-salvas` — lista oportunidades salvas pelo perfil jovem.
 - `POST /api/me/oportunidades-salvas/{id}` e `DELETE /api/me/oportunidades-salvas/{id}` — salvam ou removem uma oportunidade publicada.
 - `GET /api/admin/organizacoes/pendentes` — lista solicitações aguardando análise.
+- `GET /api/admin/organizacoes?status=PENDENTE|APROVADA|RECUSADA` — lista instituições por status para consulta administrativa.
 - `PATCH /api/admin/organizacoes/{id}/status` — recebe `{"status":"APROVADA","motivo":"..."}` ou `{"status":"RECUSADA","motivo":"..."}`.
 - `GET /api/admin/categorias?tipo=CURSO` e `GET /api/admin/localidades` — consulta os IDs necessários para cadastrar oportunidades.
 - `POST /api/admin/oportunidades` — cadastra uma oportunidade vinculada a uma organização aprovada. Ela começa `PENDENTE_REVISAO`.
@@ -58,3 +59,4 @@ Os filtros podem ser combinados. O código CORS permite, por padrão, o protóti
 Todas as rotas `/api/admin/**` exigem uma sessão com perfil `ADMIN`. A sessão expira após oito horas ou quando o usuário sai do painel. O painel local em `admin.html` permite aprovar/recusar instituições e publicar/recusar oportunidades. Ao aprovar uma instituição, o painel gera uma senha provisória aleatória; o administrador entrega manualmente o e-mail de acesso e a senha à instituição. Jovens podem criar uma conta pela página `cadastro-jovem.html`; o login compartilhado em `login.html` encaminha cada perfil à sua área. As senhas de contas persistidas são armazenadas com hash PBKDF2; as credenciais do administrador local são configuradas ao iniciar a API. Este fluxo destina-se ao protótipo local; não exponha a API publicamente sem uma implantação com HTTPS e controles de segurança apropriados.
 
 O formulário público salva dados de contato no banco local. Use somente dados fictícios durante o desenvolvimento. O acesso para organizações é criado após aprovação; ainda não há painel para que elas próprias cadastrem e gerenciem oportunidades.
+

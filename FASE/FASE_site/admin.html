@@ -28,11 +28,30 @@
         <p>Analise solicitações de instituições e revise oportunidades antes da publicação.</p></div>
     </header>
     <p class="status-formulario" id="admin-status" role="status" aria-live="polite" hidden></p>
+    <section class="secao-admin dashboard-admin" aria-labelledby="dashboard-titulo">
+      <div class="cabecalho-secao"><div><span class="etiqueta">Visão geral</span><h2 id="dashboard-titulo">Indicadores da plataforma</h2></div>
+        <button class="botao botao-secundario" id="atualizar-dashboard" type="button">Atualizar indicadores</button></div>
+      <p class="dashboard-atualizacao" id="dashboard-atualizacao" aria-live="polite">Carregando indicadores...</p>
+      <div class="indicadores-grid" id="dashboard-indicadores" aria-label="Indicadores principais"></div>
+      <div class="graficos-grid">
+        <article class="cartao grafico-card"><h3>Oportunidades publicadas</h3><p class="grafico-legenda-intro">Distribuição por tipo</p>
+          <div class="grafico-donut-layout"><div class="grafico-donut" id="grafico-tipos" role="img" aria-label="Distribuicao das oportunidades por tipo"></div><ul class="grafico-legenda" id="legenda-tipos"></ul></div>
+        </article>
+        <article class="cartao grafico-card"><h3>Categorias em destaque</h3><p class="grafico-legenda-intro">Oportunidades publicadas por categoria</p>
+          <div class="grafico-barras" id="grafico-categorias" role="img" aria-label="Oportunidades publicadas por categoria"></div>
+        </article>
+      </div>
+    </section>
     <section class="secao-admin" aria-labelledby="instituicoes-titulo">
-      <div class="cabecalho-secao"><div><span class="etiqueta">Acesso à plataforma</span><h2 id="instituicoes-titulo">Instituições pendentes</h2></div>
+      <div class="cabecalho-secao"><div><span class="etiqueta">Acesso à plataforma</span><h2 id="instituicoes-titulo">Instituições parceiras</h2></div>
         <button class="botao botao-secundario" id="atualizar-instituicoes" type="button">Atualizar</button></div>
       <p class="resultado-contagem" id="contagem-instituicoes" aria-live="polite"></p>
-      <div class="lista" id="lista-instituicoes"></div>
+      <div class="abas-instituicoes" role="tablist" aria-label="Filtrar instituições por status">
+        <button class="aba-instituicao ativa" id="aba-pendentes" type="button" role="tab" aria-controls="lista-instituicoes" aria-selected="true" data-status="PENDENTE">Pendentes</button>
+        <button class="aba-instituicao" id="aba-aprovadas" type="button" role="tab" aria-controls="lista-instituicoes" aria-selected="false" data-status="APROVADA">Aprovadas</button>
+        <button class="aba-instituicao" id="aba-recusadas" type="button" role="tab" aria-controls="lista-instituicoes" aria-selected="false" data-status="RECUSADA">Recusadas</button>
+      </div>
+      <div class="lista" id="lista-instituicoes" role="tabpanel" aria-labelledby="aba-pendentes" tabindex="0"></div>
     </section>
     <section class="secao-admin" aria-labelledby="oportunidades-titulo">
       <div class="cabecalho-secao"><div><span class="etiqueta">Publicações</span><h2 id="oportunidades-titulo">Oportunidades para revisão</h2></div>
@@ -46,3 +65,4 @@
   </div>
 </body>
 </html>
+

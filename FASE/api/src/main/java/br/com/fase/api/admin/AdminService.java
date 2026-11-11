@@ -50,7 +50,12 @@ public class AdminService {
 
     @Transactional(readOnly = true)
     public List<OrganizacaoAdminResponse> organizacoesPendentes() {
-        return organizacoes.findByStatusAprovacaoOrderByIdAsc("PENDENTE")
+        return organizacoesPorStatus("PENDENTE");
+    }
+
+    @Transactional(readOnly = true)
+    public List<OrganizacaoAdminResponse> organizacoesPorStatus(String status) {
+        return organizacoes.findByStatusAprovacaoOrderByIdAsc(status)
                 .stream().map(OrganizacaoAdminResponse::de).toList();
     }
 
@@ -169,3 +174,4 @@ public class AdminService {
         }
     }
 }
+
